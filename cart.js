@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, price) => acc + price.price, 0) // This call back function takes two paramaters the accumulator and the value in the stated element. it then adds the two to gether. I have stated that the accumulator should start with the value of 0
+
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,7 +57,9 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = ((cartTota, cuponValue, tax) => cartTota * (tax + 1) - cuponValue)
 
+console.log(calcFinalPrice(25, 5, .08)) // checking the math and function if it works properly
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +82,7 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    The object shuld contain the customers name  what they ordered how much they ordered and the price of the item(s) ordered
 
 */
 
@@ -87,4 +91,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customerInfo = {
+
+    name: "",  // this string is empty expecting to be filled with a potential  customer name
+    item: "", // this string is empty till the customer orders and item
+    quantity: [], // this array is empty till a quantiy has been ordered
+    price: [], // this array is empty till filled with the price of the item ordered
+}
