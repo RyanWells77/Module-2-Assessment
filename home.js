@@ -21,7 +21,9 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+const greetUser = (username) => `Welcome back, ${username}.`
+
+// console.log(greetUser("Ryan"))
 
 
 
@@ -49,10 +51,17 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
 
 
+const canWeDeliver = (zipCode) => {
+    if (deliveryAreaZipCodes.includes(zipCode)) {
+        return "You're in our delivery zone!"
+    } else {
+        return "sorry, we can't deliver to that address."
+    }
+}
 
+// console.log(canWeDeliver(85208))
 /* 
     Problem 2 Continued
 
@@ -70,7 +79,17 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+const canWeDeliverTwo = (zipCode) => {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if (zipCode === deliveryAreaZipCodes[i]) {
+            return "You're in our delivery zone!"
+        } else {
+            return "sorry, we can't deliver to that address."
+        }
+    }
+}
+
+// console.log(canWeDeliverTwo(85205))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,15 +107,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 const deals = [
     {
-        title: '15% Off!', 
+        title: '15% Off!',
         desc: 'Applied to your entire order when you spend $30 or more'
-    }, 
+    },
     {
-        title: 'Free Kids Meal with 2 Regular Entrees', 
+        title: 'Free Kids Meal with 2 Regular Entrees',
         desc: '   This deal lasts until the end of March! '
     }
 ]
 
+console.log(deals)
 /*
     The owner has decided to take the 15% off
     deal down to 10%.
@@ -106,13 +126,14 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-//CODE HERE
+// deals.replace(deals[0].title = "10%")
+// deals[0].title.replace("10%")
+deals[0].title = deals[0].title.replace("15%", "10%")
 
-
-
+console.log(deals)
 /*
     The restaurant is going to continue its
-    family deal for another month. 
+    family deal for another month.
 
     Reassign the value of the second deal's desc
     to be itself, but use the `replace` method
@@ -123,4 +144,5 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+deals[1].desc = deals[1].desc.replace("March" , "April").trim()
+console.log(deals)
