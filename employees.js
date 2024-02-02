@@ -19,7 +19,16 @@
     stored on the object.
 */
 
-//CODE HERE
+class Employee {
+    constructor(name, shifts) { // my constructor is requesting two parameters i have named parameter one "name" and parameter two "shifts"
+        this.name = name
+        this.shifts = shifts
+    }
+    getSchedule() {
+        console.log(`${this.name} works on ${this.shifts}.`)  // I have created a .method name getSchedule when invoked it will console log the stated string inserting the parameters where called in to the string.
+
+    }
+}
 
 
 
@@ -33,14 +42,14 @@
     shifts: weekday mornings, weekday afternoons
 */
 
-//CODE HERE
+const empOne = new Employee("jess", "weekday mornings, weekday afternoons") // using the class Employee i am filling in the object values in thats class
 
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
-//CODE HERE
+empOne.getSchedule()
 
 
 /*
@@ -55,7 +64,11 @@
     dot or bracket notation.
 */
 
-//CODE HERE
+// let empTwo = new Employee ({ ...empOne, name: "Nick" }) // this didn't work as I expected it to
+let empTwo = { ...empOne, name: "Nick" }
+console.log(empTwo)
+// let empTwo = { ... empOne, name: "Nick"}
+// empTwo.getSchedule() // I don't know why this is giving an error but the instructions don't require me to run the getSchedule function so I will skip doing this
 
 
 
@@ -82,7 +95,19 @@
     the employees array. 
 */
 
-//CODE HERE
+class Manager extends Employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts)
+        this.employees = employees
+    }
+    getEmployees() {
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+    addEmployee(emp) {
+       this.employees.push(emp)
+    }
+}
+
 
 
 
@@ -97,28 +122,28 @@
     employees: Cece and Schmidt
 */
 
-//CODE HERE
+const manager = new Manager("Winston", "weekday mornings, weekday afternoos", ["Cece", "Schmidt"])
 
 
 /*
     Call the `getEmployees` method on the
-    `manager` object.  
+    `manager` object.
 */
 
-//CODE HERE
+manager.getEmployees()
 
 /*
-    Call the `addEmployee` method on the 
-    `manager` object passing in the string 
+    Call the `addEmployee` method on the
+    `manager` object passing in the string
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
-
+manager.addEmployee("Coach")
 /*
-    Call the `getEmployees` method on the
-    `manager` object again to confirm 
-    that an employee was added.
+Call the `getEmployees` method on the
+`manager` object again to confirm
+that an employee was added.
 */
 
 //CODE HERE
+manager.getEmployees()
