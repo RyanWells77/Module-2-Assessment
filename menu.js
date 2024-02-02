@@ -30,7 +30,14 @@
     'kids'
 */
 
-//CODE HERE
+const pizza = {
+    name: "Cheese",
+    price: 15,
+    category: "Kids",
+    popularity: 10,
+    rating: 10,
+    tags: ["Kids", "Cheese", "Dary"],
+}
 
 
 
@@ -42,7 +49,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -52,7 +59,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -62,7 +69,8 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
+const { price } = pizza
+console.log(price)
 
 
 /*
@@ -72,7 +80,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+const { category } = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +96,47 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const foodArr = [{
+    name: "Sandwich",
+    price: 7,
+    category: "Lunch",
+    popularity: 7,
+    rating: 9,
+    tags: ["Lunch", "To go", "Inexpencive"],
+},
+{
+    name: "Fries",
+    price: 3,
+    category: "Side",
+    popularity: 8,
+    rating: 7,
+    tags: ["Add on", "To go", "Potato"],
+},
+{
+    name: "Drink",
+    price: 2,
+    category: "Drink",
+    popularity: 10,
+    rating: 9,
+    tags: ["Lunch", "To go", "Inexpencive", "Breakfast", "Dinner"],
+},
+{
+    name: "Burrito",
+    price: 6,
+    category: "Lunch",
+    popularity: 6,
+    rating: 7,
+    tags: ["Lunch", "To go", "Inexpencive"],
+},
+{
+    name: "Cheese Pizza",
+    price: 15,
+    category: "Kids",
+    popularity: 10,
+    rating: 10,
+    tags: ["Kids", "Cheese", "Dary", "Dinner"],
+}
+]
 
 
 
@@ -105,29 +154,33 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(food=> {
+    if (food.tags.includes("Breakfast") || food.tags.includes("Lunch")) {
+        return true
+    }
+})
 
 
 
 //////////////////PROBLEM 5////////////////////
-/* 
+/*
     Now let's write a function that's a little
     more flexible than just filtering for one
-    value. We want to be able to filter for 
-    food that has above a certain rating, 
+    value. We want to be able to filter for
+    food that has above a certain rating,
     below a certain price, or any other combo.
 
     Write a function called `filterByProperty`
-    that takes in three arguments: `property`, 
-    `number`, and `type. 
+    that takes in three arguments: `property`,
+    `number`, and `type.
 
     The property will be a string (rating,
     popularity, or price)
 
     The number will be the number that you want
-    to compare against 
+    to compare against
 
-    The type should be 'above' or 'below' to 
+    The type should be 'above' or 'below' to
     indicate whether you want to get foods with
     values that are above or below the given number
     for the given property
@@ -137,18 +190,25 @@
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
+        In the callback, check if the `type` is `above`,
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
         If the type isn't `below`, return objects whose
-        value for the given property is less than the 
+        value for the given property is less than the
         `number` passed in
-    
+
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+const filterByProperty = (property, number, type) => {
+    let filteredArr = ""
+    if(type === "above"){
+        return filteredArr
+    } else if(type === "below") {
+        return filteredArr
+    }
+}
 
 
 /*
@@ -158,4 +218,5 @@
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(filterByProperty("rating", 5, "anove" ))
+console.log(filteredArr)
